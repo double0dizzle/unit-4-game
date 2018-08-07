@@ -1,4 +1,50 @@
 .crystal-image {
     width: 100px;
     height: 100px;
+    margin-right: 60px;
   }
+
+
+  body {
+    background-image: url("../images/background.jpg");
+    /* background-repeat: no-repeat; */
+    background-size: 100%;
+    margin: 0px;
+  }
+
+  header {
+    text-align: center;
+    font-size: 26px;
+    font-family: 'Modern Antiqua', cursive;
+  }
+
+  .rules {
+    text-align: center;
+    margin: 2px;
+    font-size: 18px;
+    text-shadow: 2px 2px 8px #14682A;
+    font-family: 'Modern Antiqua', cursive;
+  }
+
+  .score {
+    font-size: 40px;
+    margin-left: 1000px; 
+  }
+
+  #right {
+    text-align: center;
+    font-family: 'Modern Antiqua', cursive;
+    font-size: 30px;
+    margin-right: 1100px;
+    
+  }
+
+  #crystals {
+    margin-top: 60px;
+    margin-right: 0px;
+  }
+
+  
+
+
+ 

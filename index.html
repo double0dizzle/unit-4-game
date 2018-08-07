@@ -1,88 +1,65 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-  <title>Crystal Collector</title>
+    <title>Crystal Collector</title>
 
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Modern+Antiqua" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    
 
 </head>
+
 <body>
+        <!-- <img id="background" src="assets/images/background.jpg" alt="world crystal"> -->
+    <div id="top">
+        <header><b>Crystal Collector</b></header>
+        <br>
+        <p class="rules">You will be given a random number at the start of the game.</p>
+        <br>
+        <p class="rules">There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total score.</p>
+        <br>
+        <p class="rules">You win the game by matching your total score to the random number. You lose the game if your total score goes above the random number.</p>
+        <br>
+        <p class="rules">The value of each crystal is hidden from you until it is clicked on.  Each time a new game starts, the values of each crystal will be changed.</p>
+        <br>
+        <p class="rules">Good luck!</p>
+    </div>
 
-<h1>Number To Guess<span id="number-to-guess"></span></h1>
+    <div id="right">
+        <p>Score:<span id="current-score"></span>
+        </p>
+    </div>
+
+    <h1>Number To Guess:
+        <span id="number-to-guess"></span>
+    </h1>
+
+
+    <div id="crystals">
+
+
+    </div>
+
+    <div id="score">
+        <p class="score">Wins:
+            <span id="w"></span>
+        </p>
+        <p class="score">Losses:
+            <span id="l"></span>
+        </p>
+    </div>
+
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     
-<div id="crystals">   
-        
-</div>
 
-<div id="score">
-    <p>Wins:<span id="w"></span></p>
-    <p>Losses:<span id="l"></span></p>
-
-</div>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<script type="text/javascript">
-
-var targetNumber = Math.floor(Math.random() * 110);
-$("#number-to-guess").text(targetNumber);
-
-wins = 0;
-
-losses = 0;
-//$("#score").text(losses);
-var counter = 0;
-
-//var numberOptions = [10, 5, 9, 2];
-
-for (var i = 0; i < 4; i++) {
-
-    var random = Math.floor(Math.random() * 12);
-    console.log(random);
-    
-    var imageCrystal = $("<img>");
-
-    imageCrystal.addClass("crystal-image");
-    imageCrystal.attr("src", "assets/images/white crystal.jpg");
-    imageCrystal.attr("src", "assets/images/purple crystal.jpg");
-    imageCrystal.attr("src", "assets/images/green crystal.png");
-    imageCrystal.attr("src", "http://wallpaperweb.org/wallpaper/digital_art/1920x1200/708_crystals.jpg");
-
-    imageCrystal.attr("data-crystalvalue", random);
-    $("#crystals").append(imageCrystal);
-}
-
-//var increment = numberOptions[Math.round(Math.random())];
-
-$(".crystal-image").on("click", function() {
-
-var crystalValue = ($(this).attr("data-crystalvalue"));
-crystalValue = parseInt(crystalValue);
-counter += crystalValue;
-
-alert("New score: " + counter);
-
-if(counter === targetNumber) {
-    alert("You win!");
-    wins += 1;
-    $("#w").text(wins);
-    //document.getElementById("w").innerHTML= wins;
-    //console.log("wins: " + wins);
-    //location.reload();
-}
-else if(counter > targetNumber) {
-    alert("You lose!");
-    losses += 1;
-    document.getElementById("l").innerHTML= losses;
-    //location.reload();
-}
-
-});
-
-  
-
-</script>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 
 </body>
 
